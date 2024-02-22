@@ -10,7 +10,7 @@ const Banner = () => {
       <div className="description-container">
       <div className="description-title">An online coffee store</div>
       <div className="description">
-      Straing to you doorstep. We dont roast our coffee beans until we have your order.
+      Straight to your doorstep. We dont roast our coffee beans until we have your order.
       Every order is roasted and shipped the same day.
       </div>
       <div className="explore-btn">
