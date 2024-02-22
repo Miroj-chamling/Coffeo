@@ -2,7 +2,9 @@ import coffeeImg from "../../assets/banner/coffee.png"
 
 import "./banner.css"
 const Banner = () => {
-  return <div className="banner">
+  return (
+    <>
+    <div className="banner">
     <div className="desc-banner">
       <div className="coffeo"> COFFEO</div>
       <div className="description-container">
@@ -31,7 +33,9 @@ const Banner = () => {
         <img className="coffee-img" src={coffeeImg} alt="" />
       </div>
 
-  </div>;
+  </div>
+  </>
+  )
 };
 
 export default Banner;

@@ -4,10 +4,12 @@ import Navbar from "../../components/Navbar"
 import "./homepage.css"
 const HomePage = () => {
   return (
-    <div className="homepage">
-        <Navbar/>
-        <Banner/>
-    </div>
+   <>
+        <div className="homepage">
+            <Navbar/>
+            <Banner/>
+        </div>
+    </>
   )
 }
 
