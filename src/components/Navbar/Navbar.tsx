@@ -11,11 +11,7 @@ const Navbar = () => {
                     <li><a href="">Special Offers</a></li>
                     <li><a href="">Products</a></li>
                 </div>
-            <div className="auth">
             <div className="auth-btn">Login</div>
-                <div className="auth-btn">Signup</div>
-            </div>
-            
             </div>
             </>
 )
