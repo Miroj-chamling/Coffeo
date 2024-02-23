@@ -32,8 +32,22 @@ li a {
     z-index: 999999999;
 }
 
+.functionalities
+{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
 
-.auth-btn
+.search, .cart 
+{
+    border-radius: 100%;
+    border: 1px solid var(--primary-color);
+    padding: 8px;
+    color: var(--primary-color-dark);
+}
+
+.login
 {
     background: var(--primary-color-dark);
     color: white;

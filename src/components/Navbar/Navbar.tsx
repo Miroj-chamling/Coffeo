@@ -1,5 +1,7 @@
 import "./Navbar.css"
 
+import { ShoppingCart, Search } from "lucide-react"
+
 const Navbar = () => {
   return (
             <>
@@ -11,7 +13,15 @@ const Navbar = () => {
                     <li><a href="">Special Offers</a></li>
                     <li><a href="">Products</a></li>
                 </div>
-            <div className="auth-btn">Login</div>
+            <div className="functionalities">
+                <div className="search" >
+                    <Search height={20}/>
+                </div>
+                <div className="cart"> 
+                <ShoppingCart height={20}/>
+                </div>
+                <div className="login">Login</div>
+            </div>
             </div>
             </>
 )
