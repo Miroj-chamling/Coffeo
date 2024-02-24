@@ -10,14 +10,6 @@
     z-index: 999999;
 }
 
-.logo
-{
-    font-weight: bold;
-    font-size: 38px;
-    cursor: pointer;
-
-}
-
 li
 {
     display: inline-block;
@@ -47,7 +39,7 @@ li a {
     color: var(--primary-color-dark);
 }
 
-.login
+.login-btn
 {
     background: var(--primary-color-dark);
     color: white;

@@ -1,12 +1,20 @@
-import "./Navbar.css"
+import { useNavigate } from "react-router-dom";
+import Logo from "../miscellaneous/Logo";
+import "./Navbar.css";
 
 import { ShoppingCart, Search } from "lucide-react"
 
+
 const Navbar = () => {
+    const navigate = useNavigate(); 
+    const handleClick =()=> {
+        navigate("/login");
+    }
+
   return (
             <>
             <div className="navbar">
-                <div className="logo">Coffeo</div>
+            <Logo/>
                 <div className="links">
                     <li><a href="">Home</a></li>
                     <li><a href="">About</a></li>
@@ -20,7 +28,7 @@ const Navbar = () => {
                 <div className="cart"> 
                 <ShoppingCart height={20}/>
                 </div>
-                <div className="login">Login</div>
+                <div className="login-btn" onClick={handleClick}>Login</div>
             </div>
             </div>
             </>
