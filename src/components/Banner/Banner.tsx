@@ -1,6 +1,5 @@
 import coffeeImg from "../../assets/banner/coffee.png"
 
-import { MoveRight } from "lucide-react";
 
 import "./banner.css"
 const Banner = () => {
@@ -20,7 +19,7 @@ const Banner = () => {
       </div>
 
       <div className="explore-btn">
-        Explore Our Products <MoveRight />
+        Explore Our Products <i className="fa fa-long-arrow-right text-2xl text-white bg-transparent " aria-hidden="true"></i>
       </div>
       <div className="sales-description">
         <div className="product">

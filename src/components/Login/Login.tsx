@@ -54,7 +54,7 @@ const Login = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
         <VStack spacing={4} align={"start"}>  
             <FormControl isInvalid={errors.email}>
-              <Input type="text" variant={"flushed"} placeholder="Enter Email" width={300} {...register("email",{
+              <Input type="text" variant={"flushed"} className=" placeholder:text-black" placeholder="Enter Email" width={300} {...register("email",{
                 required: "Email Is Required"
               })}/>
                <FormErrorMessage>
@@ -62,7 +62,7 @@ const Login = () => {
                 </FormErrorMessage>
             </FormControl>
             <FormControl isInvalid={errors.password}>
-              <Input type="password" variant={"flushed"} placeholder="Enter Password" {...register("password", {
+              <Input type="password" variant={"flushed"} className=" placeholder:text-black"  placeholder="Enter Password" {...register("password", {
                 required: "Password is required"
               })}/>
                  <FormErrorMessage>

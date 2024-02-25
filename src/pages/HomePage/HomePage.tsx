@@ -1,14 +1,10 @@
-import Banner from "../../components/Banner"
-import Navbar from "../../components/Navbar"
-
-import "./homepage.css"
+import Home from "../../components/Home"
+import Recent from "../../components/RecentProducts"
 const HomePage = () => {
   return (
-   <>
-        <div className="homepage">
-            <Navbar/>
-            <Banner/>
-        </div>
+   <> 
+    <Home/>
+    <Recent/>
     </>
   )
 }

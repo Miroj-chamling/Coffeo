@@ -5,9 +5,9 @@
     align-items: center;
     color: black;
     padding: 8px;
-
     position: relative;
     z-index: 999999;
+    height: 10%;
 }
 
 li
