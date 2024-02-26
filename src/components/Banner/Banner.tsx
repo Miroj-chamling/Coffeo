@@ -1,4 +1,5 @@
 import coffeeImg from "../../assets/banner/coffee.png"
+import ExploreBtn from "../miscellaneous/ExploreBtn";
 
 
 import "./banner.css"
@@ -9,7 +10,7 @@ const Banner = () => {
     <>
     <div className="banner">
     <div className="desc-banner">
-      <div className="coffeo"> COFFEO.</div>
+      <div className="coffeo text-background"> COFFEO.</div>
       <div className="description-container">
       <div className="description-titlee">An online coffee store</div>
       <div className="description">
@@ -18,9 +19,9 @@ const Banner = () => {
       </div>
       </div>
 
-      <div className="explore-btn">
-        Explore Our Products <i className="fa fa-long-arrow-right text-2xl text-white bg-transparent " aria-hidden="true"></i>
-      </div>
+    <div className=" mt-6">
+    <ExploreBtn/>
+    </div>
       <div className="sales-description">
         <div className="product">
           <div className="title">Our Products</div>

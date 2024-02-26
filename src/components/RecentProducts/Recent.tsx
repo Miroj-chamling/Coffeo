@@ -1,21 +1,25 @@
 import CoffeeShow from "../miscellaneous/CoffeeShow"
-import coffee from "../../assets/coffee/coffee.webp";
-import karma from "../../assets/coffee/karma.webp";
-import nescafee from "../../assets/coffee/nescafe.webp";
-import motley from "../../assets/coffee/motley.webp";
+import karma from "../../assets/coffee/karma.png";
+import nescafe from "../../assets/coffee/nescafe.png";
+import colombian from "../../assets/coffee/colombian.png";
+import CoffeeAd from "../miscellaneous/CoffeeAd";
+
 
 
 const Recent = () => {
   return (
-    <div className="w-screen h-screen flex flex-col items-center bg-white">
-        <div className="text-4xl font-extrabold text-center pt-12">Explore the recent products</div>
+    <div className="w-screen h-screen flex flex-col items-center justify-between pl-20 pr-20">
+      <div>
+      <div className="text-4xl font-extrabold text-center pt-8">Explore the recent products</div>
         <div className="text-l font-normal text-center mt-3">Our delectable drink options, including classic espresso choices, house specialities, fruit smoothies and frozen treats.</div>
-        <div className="flex mt-32">
-        <CoffeeShow imgSrc={coffee} coffeeName="Columbian Brew" coffeeType="Single Origin" price={80}/>
-        <CoffeeShow imgSrc={karma} coffeeName="Karma" coffeeType="Blend" price={10}/>
-        <CoffeeShow imgSrc={nescafee} coffeeName="Nescaffee" coffeeType="Blend" price={10}/>
-        <CoffeeShow imgSrc={motley} coffeeName="Motley" coffeeType="Blend" price={16}/>
-        </div>
+      </div>
+        <div className="flex w-full justify-between" >
+        <CoffeeShow imgSrc={colombian} coffeeName="Columbian Brew" coffeeType="Single Origin" price={80}/>
+        <CoffeeShow imgSrc={colombian} coffeeName="Karma" coffeeType="Blend" price={10}/>
+        <CoffeeShow imgSrc={nescafe} coffeeName="Nescaffee" coffeeType="Blend" price={10}/>
+        <CoffeeShow imgSrc={karma} coffeeName="Motley" coffeeType="Blend" price={16}/>
+        </div>  
+        <CoffeeAd/>
     </div>
   )
 }

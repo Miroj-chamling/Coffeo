@@ -18,8 +18,8 @@ const CoffeeShow:React.FC<CoffeeProps> = ({imgSrc, coffeeType, coffeeName, price
         setIsFav(!isFav);
     }
   return (
-    <div className='coffee-container border rounded-3xl w-72 h-96 flex flex-col items-center justify-between ml-5 text-center relative' >
-        <img src={imgSrc} alt="" width={220} className="coffee img absolute -top-10" />
+    <div className='coffee-container border rounded-3xl w-72 h-96 flex flex-col items-center justify-between ml-5 text-center relative hover:bg-red-300' >
+        <img src={imgSrc} alt="" width={220} className="coffee img absolute -top-10 bg-transparent" />
         <div className='description w-full pb-8 pl-4 pr-4 absolute bottom-0'>
             <div className='type font-light text-sm'>{coffeeType}</div>
             <div className=" font-bold text-xl">{coffeeName}</div>
