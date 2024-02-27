@@ -1,8 +1,10 @@
 import {Tab, TabList, TabIndicator, TabPanels, Tabs, TabPanel } from "@chakra-ui/react"
-import CoffeeShow from "../miscellaneous/CoffeeShow"
 import karma from "../../assets/coffee/karma.png";
 import nescafe from "../../assets/coffee/nescafe.png";
 import colombian from "../../assets/coffee/colombian.png";
+import Accessories from "../miscellaneous/specialProducts/Accessories";
+import CoffeBeans from "../miscellaneous/specialProducts/CoffeBeans";
+import InstantCoffee from "../miscellaneous/specialProducts/InstantCoffee";
 
 
 const SpecialProducts = () => {
@@ -32,26 +34,26 @@ const SpecialProducts = () => {
 <TabPanels className=" mt-20">
   <TabPanel width={"80vw"}>
   <div className="flex" >
-    <CoffeeShow imgSrc={colombian} coffeeName="Columbian Brew" coffeeType="Single Origin" price={80}/>
-    <CoffeeShow imgSrc={colombian} coffeeName="Karma" coffeeType="Blend" price={10}/>
-    <CoffeeShow imgSrc={nescafe} coffeeName="Nescaffee" coffeeType="Blend" price={10}/>
-    <CoffeeShow imgSrc={karma} coffeeName="Motley" coffeeType="Blend" price={16}/>
+    <Accessories imgSrc={colombian} productName="Columbian Brew" previousPrice="120" price={80}/>
+    <Accessories imgSrc={colombian} productName="Karma" previousPrice="16" price={10}/>
+    <Accessories imgSrc={nescafe} productName="Nescaffee" previousPrice="16" price={10}/>
+    <Accessories imgSrc={karma} productName="Motley" previousPrice="16" price={16}/>
     </div>  
   </TabPanel>
   <TabPanel width={"80vw"}>
   <div className="flex" >
-    <CoffeeShow imgSrc={nescafe} coffeeName="Columbian Brew" coffeeType="Single Origin" price={80}/>
-    <CoffeeShow imgSrc={colombian} coffeeName="Karma" coffeeType="Blend" price={10}/>
-    <CoffeeShow imgSrc={nescafe} coffeeName="Nescaffee" coffeeType="Blend" price={10}/>
-    <CoffeeShow imgSrc={karma} coffeeName="Motley" coffeeType="Blend" price={16}/>
+  <CoffeBeans imgSrc={karma} productName="Columbian Brew" previousPrice="120" price={80}/>
+    <CoffeBeans imgSrc={colombian} productName="Karma" previousPrice="16" price={10}/>
+    <CoffeBeans imgSrc={nescafe} productName="Nescaffee" previousPrice="16" price={10}/>
+    <CoffeBeans imgSrc={karma} productName="Motley" previousPrice="16" price={16}/>
     </div>  
   </TabPanel>
   <TabPanel width={"80vw"}>
   <div className="flex" >
-    <CoffeeShow imgSrc={colombian} coffeeName="Columbian Brew" coffeeType="Single Origin" price={80}/>
-    <CoffeeShow imgSrc={colombian} coffeeName="Karma" coffeeType="Blend" price={10}/>
-    <CoffeeShow imgSrc={nescafe} coffeeName="Nescaffee" coffeeType="Blend" price={10}/>
-    <CoffeeShow imgSrc={karma} coffeeName="Motley" coffeeType="Blend" price={16}/>
+  <InstantCoffee imgSrc={nescafe} productName="Columbian Brew" previousPrice="120" price={80}/>
+    <InstantCoffee imgSrc={colombian} productName="Karma" previousPrice="16" price={10}/>
+    <InstantCoffee imgSrc={nescafe} productName="Nescaffee" previousPrice="16" price={10}/>
+    <InstantCoffee imgSrc={karma} productName="Motley" previousPrice="16" price={16}/>
     </div>  
   </TabPanel>
 </TabPanels>
