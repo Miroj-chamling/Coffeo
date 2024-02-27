@@ -9,6 +9,7 @@ export default {
         background: "#723E29",
         coffeAd: "#FFF6F6",
         coffeAd2: "#FFDFDF",
+        primary: "#f2eae1",
       },
       fontFamily: {
         logofont: ["Caveat", "cursive"],
