@@ -10,6 +10,10 @@ export default {
         coffeAd: "#FFF6F6",
         coffeAd2: "#FFDFDF",
         primary: "#f2eae1",
+        subscribe1: "#d1ae8c",
+        subscribe2: "#967f69",
+        darkBrown: "#261711",
+        secondaryBrown: "#523122",
       },
       fontFamily: {
         logofont: ["Caveat", "cursive"],

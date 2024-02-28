@@ -1,11 +1,11 @@
 import CoffeBeansImg from "../../assets/coffee/coffebeans.jpeg"
 import ExploreBtn from "../miscellaneous/ExploreBtn"
 import testimoni from "../../assets/testimonie.jpg"
-import Subscribe from "../miscellaneous/subscribe"
+import Subscribe from "../miscellaneous/Subscribe"
 
 const Testimonials = () => {
   return (
-    <div className=" w-screen h-screen flex flex-col items-center">
+    <div className=" w-screen h-min flex flex-col items-center">
         <div className=" flex items-start w-screen mt-12 " >
           <div className=" basis-2/5 w-full relative"> 
             <img src={CoffeBeansImg} alt=""/>
@@ -73,9 +73,10 @@ const Testimonials = () => {
 
             </div>
         </div>
-        <div className=" subscribe">
-            <Subscribe/>
-        </div>
+
+     <div className=" pr-20 pl-20 w-full">
+      <Subscribe/>
+     </div>
     </div>
   )
 }

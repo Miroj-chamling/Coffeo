@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer"
 import Home from "../../components/Home"
 import Recent from "../../components/RecentProducts"
 import SpecialProducts from "../../components/SpecialProducts"
@@ -9,6 +10,7 @@ const HomePage = () => {
     <Recent/>
     <SpecialProducts/>
     <Testimonials/>
+    <Footer/>
     </>
   )
 }
