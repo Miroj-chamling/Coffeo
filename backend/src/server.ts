@@ -1,15 +1,19 @@
 import express from "express";
+import cors from "cors";
+
+import userRouter from "./routes/userRoutes.js"
 
 const app = express();
+
+app.use(express.json());
+
 const PORT = 3000;
 
-app.get("/", (req, res) => {
-  res.send("hello world fuck youu!");
-});
+app.use(cors());
 
-app.get("/fuck", (req, res) => {
-  res.send("this is just a test fuckers!!");
-});
+app.use("/api/user", userRouter);
+
+
 
 app.listen(PORT, () => {
   console.log("Server started!");

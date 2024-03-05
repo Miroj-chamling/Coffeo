@@ -7,12 +7,13 @@
   "scripts": {
     "start": "nodemon dist/server.js",
     "build": "rimraf dist && npx tsc",
-    "preserve" : "npm run build",
+    "preserve": "npm run build",
     "serve": "tsc -w & nodemon dist/server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.3",
     "nodemailer": "^6.9.11",
     "nodemon": "^3.1.0",
