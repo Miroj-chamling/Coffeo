@@ -1,20 +1,7 @@
-import express from "express";
-import cors from "cors";
+import { app } from "./app/index.js";
+import logger from "./utils/logger.js";
+import { env } from "./utils/env.js";
 
-import userRouter from "./routes/userRoutes.js"
-
-const app = express();
-
-app.use(express.json());
-
-const PORT = 3000;
-
-app.use(cors());
-
-app.use("/api/user", userRouter);
-
-
-
-app.listen(PORT, () => {
-  console.log("Server started!");
+app.listen(8000 , () => {
+  logger.info(`success ${env.PORT}`);
 });
