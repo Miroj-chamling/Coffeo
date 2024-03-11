@@ -6,8 +6,11 @@ import cors from "cors";
 export const app: Express= express();
 
 import userRouter from "../routes/userRoutes.js"
+import connectDB from "../config/db.js";
 
-app.use(express.json());
+app.use(express.json({limit: "50mb"}));
+connectDB();
+
 
 app.use(cors(
   {
