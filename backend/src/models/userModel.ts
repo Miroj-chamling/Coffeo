@@ -2,6 +2,7 @@ import { Schema, Model, model } from "mongoose";
 import bcrypt from "bcrypt";
 
 import { UserModelType } from "../types/user_types.js";
+import logger from "../utils/logger.js";
 
 
 const userModelSchema: Schema<UserModelType> = new Schema<UserModelType>({
@@ -17,13 +18,17 @@ const userModelSchema: Schema<UserModelType> = new Schema<UserModelType>({
 })
 
 userModelSchema.pre("save", async function (next) {
-    if(!this.isModified)
+    if(!this.isModified("password"))
     {
         next();
     }
 
+  try {
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt)
+  } catch (error) {
+    logger.error(error)
+  }
 
 })
 
