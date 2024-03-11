@@ -7,10 +7,10 @@ export const app: Express= express();
 
 import userRouter from "../routes/userRoutes.js"
 import connectDB from "../config/db.js";
+import { errorHandleMiddleware } from "../middlewares/errorHandleMiddleware.js";
 
 app.use(express.json({limit: "50mb"}));
 connectDB();
-
 
 app.use(cors(
   {
@@ -23,4 +23,10 @@ app.use(cookieParser())
 app.use(compression())
 
 
+app.get("/",(req,res)=>
+{
+  res.send("hello ")
+})
+
 app.use("/api/user", userRouter);
+app.use(errorHandleMiddleware)
