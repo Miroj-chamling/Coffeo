@@ -2,10 +2,11 @@ import { Request, Response, NextFunction } from "express";
 import asyncHandler from "express-async-handler"
 
 import { userRegisterValidate } from "../../zod/auth/userRegister_validate_schema.js";
-import { UserModel } from "../../models/userModel.js";
+import { UserModel } from "../../models/userModel/userModel.js";
 import ErrorHandler from "../../utils/errorHandler.js";
 import logger from "../../utils/logger.js";
-
+import { sendActivationTokenEmail } from "../../libs/email_send/send_email.js";
+import { getActivationToken } from "../../libs/token_generation/generate_activation_token.js";
 
 
 
@@ -60,4 +61,11 @@ export const registerUser = asyncHandler(async(req:Request,res:Response, next:Ne
             message: "user not created"
         });
     }
+
+    const activationToken = await getActivationToken(email);
+
+    logger.info(activationToken)
+
+    sendActivationTokenEmail({email, subject: "Activate Your Account", activationToken})
+
 })

@@ -1,8 +1,8 @@
 import { Schema, Model, model } from "mongoose";
 import bcrypt from "bcrypt";
 
-import { UserModelType } from "../types/user_types.js";
-import logger from "../utils/logger.js";
+import { UserModelType } from "../../types/user_types.js";
+import logger from "../../utils/logger.js";
 
 
 const userModelSchema: Schema<UserModelType> = new Schema<UserModelType>({
