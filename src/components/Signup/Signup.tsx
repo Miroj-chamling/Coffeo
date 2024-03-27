@@ -1,4 +1,4 @@
-import { FormControl, Button,Box, VStack, Text, FormErrorMessage, Spinner,Divider, Flex , InputGroup, InputRightElement, IconButton } from "@chakra-ui/react"
+import { FormControl, Button,Box, VStack, Text, FormErrorMessage, Spinner,Divider, Flex , InputGroup, InputRightElement, IconButton, useToast } from "@chakra-ui/react"
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons"
 import {Input} from "@chakra-ui/input"
 import { z } from "zod"
@@ -9,10 +9,12 @@ import { Link } from "react-router-dom"
 import Facebook from "../../components/miscellaneous/Facebook"
 import Google from "../../components/miscellaneous/Google"
 import { useState } from "react"
+import axios from "axios"
 
 const signupSchema = z.object(
   {
-    email: z.string().email(),
+    username: z.string().min(1,{message: "This field is required"}),
+    email: z.string().min(1,{message: "This field is required"}).email(),
     password: z.string().min(8),
     confirmPassword: z.string().optional(),
   }
@@ -28,9 +30,10 @@ type SignupField = z.infer<typeof signupSchema>
 
 
 const SignUp = () => {
-
     const [isPasswordVisible, setIsPasswordVisibile] = useState(false);
     const [isCPasswordVisible, setIsCPasswordVisible] = useState(false);
+
+    const toast = useToast();
 
     const {
         register,
@@ -45,14 +48,31 @@ const SignUp = () => {
 
     const onSubmit : SubmitHandler<SignupField> = async(data)=> {
       try {
-        await new Promise((resolve)=>setTimeout(resolve,1000))
-        // throw new Error()
-        console.log(data)
+        console.log(data);
+        const response = await axios.post("http://localhost:4000/api/user/register",data);
+        console.log(response.data.message)
         reset();
-      } catch (error) {
-        setError("root", {
-          message: "The email or password doesn't match"
+
+        toast(
+          {
+            title: "Registered Successfully",
+            status: "success",
+            duration: 5000,
+            isClosable: false,
+            position: "bottom",
+          }
+        )
+
+      } catch (error : any) {
+       if(error.response && error.response.data && error.response.data.message){
+        setError("username",{
+          type: "manual",
+          message: error.response.data.message
         })
+       }else
+       {
+        console.log("form not submitted")
+       }
       }
     }
 
@@ -66,6 +86,16 @@ const SignUp = () => {
       <Flex height={250} width="100vw" maxWidth={750} position={"relative"}  gap={20} >  
           <form onSubmit={handleSubmit(onSubmit)}>
           <VStack spacing={4} align={"start"}>  
+
+          <FormControl isInvalid={!!errors.username}>
+            <Input autoComplete="off" type="text" variant={"flushed"} className=" placeholder:text-black" placeholder="Create Username" width={300} {...register("username",{
+              required: "Username is required"
+            })}/>
+             <FormErrorMessage>
+        {errors.username && errors.username?.message}
+              </FormErrorMessage>
+          </FormControl> 
+
           <FormControl isInvalid={!!errors.email}>
             <Input autoComplete="off" type="text" variant={"flushed"} className=" placeholder:text-black" placeholder="Enter Email" width={300} {...register("email",{
               required: "Email Is Required"
@@ -73,6 +103,7 @@ const SignUp = () => {
              <FormErrorMessage>
         {errors.email && errors.email.message}
               </FormErrorMessage>
+        
           </FormControl>
 
           <FormControl isInvalid={!!errors.password}>
@@ -95,7 +126,6 @@ const SignUp = () => {
         {errors.password && errors.password.message}
               </FormErrorMessage>
           </FormControl>
-           {errors.root && <Text fontSize={"sm"} color={"red"} textAlign={"left"}>{errors.root.message}</Text>} 
 
            <FormControl isInvalid={!!errors.confirmPassword}>
            <InputGroup>

@@ -6,7 +6,7 @@ import logger from "../../utils/logger.js";
 
 
 const userModelSchema: Schema<UserModelType> = new Schema<UserModelType>({
-   username: { type: String, required: true, unique: true },
+    username: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
     password: { type: String },
     createdAt: { type: Date, default: Date.now },
