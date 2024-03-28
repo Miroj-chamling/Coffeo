@@ -31,14 +31,14 @@ export const registerUser = asyncHandler(async(req:Request,res:Response, next:Ne
     const usernameExists = await UserModel.findOne({username});
 
     if(usernameExists){
-        return next(new ErrorHandler(false, "Username already taken!", 409));
+        return next(new ErrorHandler(false, "Username already taken!", 409, "uname"));
     }
 
     const emailExists = await UserModel.findOne({email});
 
     if(emailExists)
     {
-       return next(new ErrorHandler(false, "Email already exists", 409));
+       return next(new ErrorHandler(false, "Email already exists", 409, "email"));
     }
 
     const user = await UserModel.create({

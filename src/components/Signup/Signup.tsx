@@ -11,6 +11,7 @@ import Google from "../../components/miscellaneous/Google"
 import { useState } from "react"
 import axios from "axios"
 
+
 const signupSchema = z.object(
   {
     username: z.string().min(1,{message: "This field is required"}),
@@ -50,7 +51,7 @@ const SignUp = () => {
       try {
         console.log(data);
         const response = await axios.post("http://localhost:4000/api/user/register",data);
-        console.log(response.data.message)
+        console.log(response)
         reset();
 
         toast(
@@ -64,14 +65,29 @@ const SignUp = () => {
         )
 
       } catch (error : any) {
-       if(error.response && error.response.data && error.response.data.message){
+        console.log(error)
+       if(error.response.data.field === "uname"){
         setError("username",{
           type: "manual",
           message: error.response.data.message
         })
+       }else if (error.response.data.field === "email")
+       {
+        setError("email",{
+          type: "manual",
+          message: error.response.data.message,
+        })
        }else
        {
-        console.log("form not submitted")
+        toast(
+          {
+            title: "Form not submitted",
+            status: "error",
+            duration: 5000,
+            isClosable: false,
+            position: "bottom",
+          }
+        )
        }
       }
     }
@@ -87,13 +103,15 @@ const SignUp = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
           <VStack spacing={4} align={"start"}>  
 
-          <FormControl isInvalid={!!errors.username}>
+          <FormControl isInvalid={!!errors.root || !!errors.username}>
             <Input autoComplete="off" type="text" variant={"flushed"} className=" placeholder:text-black" placeholder="Create Username" width={300} {...register("username",{
               required: "Username is required"
             })}/>
-             <FormErrorMessage>
-        {errors.username && errors.username?.message}
-              </FormErrorMessage>
+            {errors.username && <FormErrorMessage>{errors.username?.message}</FormErrorMessage>}
+            {errors.root && <FormErrorMessage>{errors.root?.message}</FormErrorMessage>}
+
+            {/* {errors.root && <FormError errorMsg={errors.root.message} />} */}
+           
           </FormControl> 
 
           <FormControl isInvalid={!!errors.email}>

@@ -20,6 +20,7 @@ export const errorHandleMiddleware = (
             success: err.success ||"false",
             message: err.message ||"500 Internal server Error!",
             statusCode: err.statusCode || 500,
+            field: err.field
         }
     )
 }
