@@ -12,4 +12,5 @@ export interface UserModelType extends Document
     isPasswordCorrect(password: string): Promise<boolean>;
     generateAccessToken(): string;
     generateRefreshToken(): string;  
+    checkPassword(enteredPassword: string): Promise<boolean>;
 }

@@ -54,6 +54,7 @@ export const registerUser = asyncHandler(async(req:Request,res:Response, next:Ne
             username: user.username,
             email: user.email, 
             password: user.password,
+
         })
     }
     else{

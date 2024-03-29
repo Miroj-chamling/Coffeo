@@ -1,8 +1,11 @@
 import { Schema, Model, model } from "mongoose";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 import { UserModelType } from "../../types/user_types.js";
 import logger from "../../utils/logger.js";
+import { env } from "../../utils/env.js";
+
 
 
 const userModelSchema: Schema<UserModelType> = new Schema<UserModelType>({
@@ -16,6 +19,16 @@ const userModelSchema: Schema<UserModelType> = new Schema<UserModelType>({
 },  {
     timestamps: true,
 })
+
+userModelSchema.methods.checkPassword = async function (enteredPassword: string){
+  return await bcrypt.compare(enteredPassword, this.password)
+}
+
+userModelSchema.methods.generateRefreshToken = function(): string {
+  return jwt.sign({_id: this._id}, env.JWT_SECRET  ,{
+    expiresIn: env.REFRESH_TOKEN_EXPIRY,
+  })
+}
 
 userModelSchema.pre("save", async function (next) {
     if(!this.isModified("password"))

@@ -10,6 +10,8 @@ const envSchema = z.object({
   SMTP_MAIL: z.string(),
   SMTP_PASSWORD:z.string(),
   SMTP_PORT:z.string(),
+  JWT_SECRET:z.string(),
+  REFRESH_TOKEN_EXPIRY:z.string(),
 //   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
 });
 export const env = envSchema.parse(process.env);
