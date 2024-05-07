@@ -24,8 +24,14 @@ userModelSchema.methods.checkPassword = async function (enteredPassword: string)
   return await bcrypt.compare(enteredPassword, this.password)
 }
 
+userModelSchema.methods.generateAccessToken = function():string {
+  return jwt.sign({_id: this.id},env.JWT_ACCESS_SECRET, {
+    expiresIn: env.ACCESS_TOKEN_EXPIRY,
+  })
+}
+
 userModelSchema.methods.generateRefreshToken = function(): string {
-  return jwt.sign({_id: this._id}, env.JWT_SECRET  ,{
+  return jwt.sign({_id: this._id}, env.JWT_REFRESH_SECRET  ,{
     expiresIn: env.REFRESH_TOKEN_EXPIRY,
   })
 }

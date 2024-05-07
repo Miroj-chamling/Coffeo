@@ -5,13 +5,13 @@ import SpecialProducts from "../../components/SpecialProducts"
 import Testimonials from "../../components/Testimonials"
 const HomePage = () => {
   return (
-   <> 
+   <div className="mx-32"> 
     <Home/>
     <Recent/>
     <SpecialProducts/>
     <Testimonials/>
     <Footer/>
-    </>
+    </div>
   )
 }
 

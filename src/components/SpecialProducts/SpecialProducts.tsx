@@ -9,7 +9,7 @@ import InstantCoffee from "../miscellaneous/specialProducts/InstantCoffee";
 
 const SpecialProducts = () => {
   return (
-    <div className=" w-screen h-screen flex flex-col pl-20 pr-20 items-center" >
+    <div className="h-screen w-full flex flex-col" >
           <div>
       <div className="text-4xl font-extrabold text-center pt-8"><span className="text-background">Weekend</span> <span className=" text-stone-600">special products</span> </div>
         <div className="text-l font-normal text-center mt-3">Checkout our special product that you can get with 20% OFF.</div>
@@ -31,16 +31,16 @@ const SpecialProducts = () => {
   bg= "brown"
   borderRadius="16px"
 />
-<TabPanels className=" mt-20">
-  <TabPanel width={"80vw"}>
-  <div className="flex" >
+<TabPanels className="mt-20">
+  <TabPanel width={"full"} >
+  <div className="flex">
     <Accessories imgSrc={colombian} productName="Columbian Brew" previousPrice="120" price={80}/>
     <Accessories imgSrc={colombian} productName="Karma" previousPrice="16" price={10}/>
     <Accessories imgSrc={nescafe} productName="Nescaffee" previousPrice="16" price={10}/>
     <Accessories imgSrc={karma} productName="Motley" previousPrice="16" price={16}/>
     </div>  
   </TabPanel>
-  <TabPanel width={"80vw"}>
+  <TabPanel width={"full"}>
   <div className="flex" >
   <CoffeBeans imgSrc={karma} productName="Columbian Brew" previousPrice="120" price={80}/>
     <CoffeBeans imgSrc={colombian} productName="Karma" previousPrice="16" price={10}/>
@@ -48,7 +48,7 @@ const SpecialProducts = () => {
     <CoffeBeans imgSrc={karma} productName="Motley" previousPrice="16" price={16}/>
     </div>  
   </TabPanel>
-  <TabPanel width={"80vw"}>
+  <TabPanel width={"full"}>
   <div className="flex" >
   <InstantCoffee imgSrc={nescafe} productName="Columbian Brew" previousPrice="120" price={80}/>
     <InstantCoffee imgSrc={colombian} productName="Karma" previousPrice="16" price={10}/>
@@ -59,11 +59,7 @@ const SpecialProducts = () => {
 </TabPanels>
 </Tabs>
 </div>
-
-  
-       </div>
-
-
+</div>
   )
 }
 

@@ -1,24 +1,3 @@
-.banner
-{
-    width: 100%;
-    height: 90%;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-}
-
-.desc-banner
-{
-    padding: 8px;
-    width: 80%;
-}
-
-.coffeo
-{
-    font-size: 4rem;
-    font-weight: 700;
-}
-
 .description-container
 {
     max-width: 62%;
@@ -64,28 +43,15 @@
     font-weight: bold;
 }
 
-.img-container
-{
-    float: right;
-    margin-top: 10%;
-    background: #F5E8C7;
-    height: 400px;
-    width: 500px;
-    border-radius: 60px 0 0 80px;
-    position: relative;
-}
-
-
 
 .coffee-img
 {
-    position: absolute;
-    max-width: 800px;
-    max-height: 800px;
-    top: -56%;
-    left: -60%;
+    max-height: 700px;
+    max-width: 700px;
     transform: rotate(-26deg);
-
+    top: 60px;
+    right: 10px;
+    position: absolute;   
 }
 
 .vl

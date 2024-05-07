@@ -5,11 +5,11 @@ import Subscribe from "../miscellaneous/Subscribe"
 
 const Testimonials = () => {
   return (
-    <div className=" w-screen h-min flex flex-col items-center">
-        <div className=" flex items-start w-screen mt-12 " >
+    <div className="flex flex-col items-center bg-slate-500">
+        <div className=" flex items-start mt-12 " >
           <div className=" basis-2/5 w-full relative"> 
             <img src={CoffeBeansImg} alt=""/>
-            <div className=" w-max h-20 backdrop-blur-sm  bg-white/70 absolute rounded-full right-3 top-96 flex p-2">
+            <div className=" w-max h-20 backdrop-blur-sm  bg-white/70 absolute rounded-full right-2 top-80 flex p-2">
               <img src={testimoni} alt="" width={60} className=" rounded-full object-cover "/>
             <div className=" ml-3">
                 <div className="uname font-bold text-sm">Brooklyn Simons</div>
@@ -74,7 +74,7 @@ const Testimonials = () => {
             </div>
         </div>
 
-     <div className=" pr-20 pl-20 w-full">
+     <div className="mt-12 w-full">
       <Subscribe/>
      </div>
     </div>

@@ -1,29 +1,30 @@
-import { FormControl, Button,Box, VStack, Text, FormErrorMessage, Spinner,Divider, Flex, InputGroup, InputRightElement, IconButton  } from "@chakra-ui/react"
+import { FormControl, Button,Box, VStack, Text, FormErrorMessage, Spinner,Divider, Flex, InputGroup, InputRightElement, IconButton, useToast  } from "@chakra-ui/react"
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons"
 import {Input} from "@chakra-ui/input"
 import { z } from "zod"
 import {SubmitHandler, useForm} from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 import Facebook from "../miscellaneous/Facebook"
 import Apple from "../miscellaneous/Apple"
 import Google from "../miscellaneous/Google"
 import { useState } from "react"
+import axios from "axios"
 
 const loginSchema = z.object(
   {
-    email: z.string().email(),
+    email: z.string().min(1,{message: "This field is required"}).email(),
     password: z.string().min(8),
   }
 )
 
-type SignupField = z.infer<typeof loginSchema>
+type LoginField = z.infer<typeof loginSchema>
 
 const Login = () => {
-
-
+  const navigate = useNavigate();
+  const toast = useToast();
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -33,19 +34,30 @@ const Login = () => {
         setError,  
         reset,
         formState: {errors, isSubmitting},
-    } = useForm<SignupField>(
+    } = useForm<LoginField>(
       {resolver: zodResolver(loginSchema)}
     );
 
-    const onSubmit : SubmitHandler<SignupField> = async(data)=> {
+    const onSubmit : SubmitHandler<LoginField> = async(data)=> {
       try {
-        await new Promise((resolve)=>setTimeout(resolve,1000))
-        // throw new Error()
-        console.log(data)
+        const response = await axios.post("http://localhost:4000/api/user/login",data);
+        console.log(response)
         reset();
-      } catch (error) {
-        setError("root", {
-          message: "The email or password doesn't match"
+        toast(
+          {
+            title: "LoggedIn Successfully",
+            status: "success",
+            duration: 5000,
+            isClosable: false,
+            position: "bottom",
+          }
+        )
+        navigate("/")
+
+      } catch (error: any) {
+        console.log(error);
+        setError("password", {
+          message: error.response.data.message,
         })
       }
     }

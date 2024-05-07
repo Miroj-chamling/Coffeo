@@ -3,7 +3,7 @@ import Navbar from "../Navbar"
 
 const Home = () => {
   return (
-    <div className=" w-screen h-screen overflow-hidden pl-20" >
+    <div className=" h-screen">
         <Navbar/>
         <Banner/>
     </div>

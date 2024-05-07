@@ -18,7 +18,7 @@ const InstantCoffee:React.FC<InstantCoffeeProps> = ({imgSrc, productName, price,
         setIsFav(!isFav);
     }
   return (
-    <div className='coffee-container border rounded-3xl w-72 h-96 flex flex-col items-center justify-between ml-5 relative hover:bg-red-300' >
+    <div className='coffee-container border rounded-3xl w-full h-96 flex flex-col items-center justify-between ml-5 relative hover:bg-red-300' >
         <img src={imgSrc} alt="" width={220} className="coffee img absolute -top-10 bg-transparent" />
         <div className='flex flex-col items-start description w-full pb-8 pl-4 pr-4 absolute bottom-0'>
             <div className=" text-sm font-light">Product name</div>

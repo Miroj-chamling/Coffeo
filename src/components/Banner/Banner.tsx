@@ -1,4 +1,4 @@
-import coffeeImg from "../../assets/banner/coffee.png"
+import coffeeImg from "../../assets/banner/coffeee.png"
 import ExploreBtn from "../miscellaneous/ExploreBtn";
 
 
@@ -8,9 +8,9 @@ const Banner = () => {
 
   return (
     <>
-    <div className="banner">
-    <div className="desc-banner">
-      <div className="coffeo text-background"> COFFEO.</div>
+    <div className="banner w-full h-full flex mt-28 overflow-hidden">
+    <div className="desc-banner w-full">
+      <div className="coffeo text-background text-8xl font-medium" >COFFEO.</div>
       <div className="description-container">
       <div className="description-titlee">An online coffee store</div>
       <div className="description">
