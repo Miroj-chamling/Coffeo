@@ -5,11 +5,13 @@ import SpecialProducts from "../../components/SpecialProducts"
 import Testimonials from "../../components/Testimonials"
 const HomePage = () => {
   return (
-   <div className="mx-32"> 
+   <div>  
     <Home/>
-    <Recent/>
-    <SpecialProducts/>
-    <Testimonials/>
+       <div className=" w-[1400px] my-0 mx-auto"> 
+        <Recent/>
+        <SpecialProducts/>
+        <Testimonials/>
+        </div>
     <Footer/>
     </div>
   )

@@ -9,7 +9,7 @@ import InstantCoffee from "../miscellaneous/specialProducts/InstantCoffee";
 
 const SpecialProducts = () => {
   return (
-    <div className="h-screen w-full flex flex-col" >
+    <div className="special-products">
           <div>
       <div className="text-4xl font-extrabold text-center pt-8"><span className="text-background">Weekend</span> <span className=" text-stone-600">special products</span> </div>
         <div className="text-l font-normal text-center mt-3">Checkout our special product that you can get with 20% OFF.</div>

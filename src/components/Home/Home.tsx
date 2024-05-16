@@ -3,7 +3,7 @@ import Navbar from "../Navbar"
 
 const Home = () => {
   return (
-    <div className=" h-screen">
+    <div className="hero  bg-cover overflow-hidden px-24">
         <Navbar/>
         <Banner/>
     </div>

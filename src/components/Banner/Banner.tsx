@@ -8,7 +8,7 @@ const Banner = () => {
 
   return (
     <>
-    <div className="banner w-full h-full flex mt-28 overflow-hidden">
+    <div className="banner flex mt-24 mx-auto relative ">
     <div className="desc-banner w-full">
       <div className="coffeo text-background text-8xl font-medium" >COFFEO.</div>
       <div className="description-container">
@@ -35,8 +35,8 @@ const Banner = () => {
       </div>
      
     </div>
-      <div className="img-container">
-        <img className="coffee-img" src={coffeeImg} alt="" />
+      <div className="img-container relative -rotate-[26deg] bottom-28 left-28">
+        <img className="coffee-img w-full h-full" src={coffeeImg} alt="" />
       </div>
 
   </div>
