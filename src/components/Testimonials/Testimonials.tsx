@@ -6,7 +6,7 @@ import Subscribe from "../miscellaneous/Subscribe"
 const Testimonials = () => {
   return (
     <div className=" mt-44 ">
-        <div className=" flex items-start mt-12 " >
+        <div className=" flex items-start" >
           <div className=" basis-2/5 w-full relative"> 
             <img src={CoffeBeansImg} alt=""/>
             <div className=" w-max h-20 backdrop-blur-sm  bg-white/70 absolute rounded-full right-2 top-80 flex p-2">

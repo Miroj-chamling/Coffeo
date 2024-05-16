@@ -1,7 +1,7 @@
-.description-container
+/* .description-container
 {
     max-width: 62%;
-    /* background-color: green; */
+
 
 }
 
@@ -10,7 +10,7 @@
 
     font-size: 3.9rem;
     width: max-content;
-   /* font-size: clamp(2vw, 4.1vw, 6vw); */
+
     font-weight: 600;
     color: var(--primary-color-dark);
    
@@ -44,19 +44,11 @@
 }
 
 
-/* .coffee-img
-{
-    max-height: 700px;
-    max-width: 700px;
-    transform: rotate(-26deg);
-    top: 60px;
-    right: 10px;
-    position: absolute;   
-} */
+
 
 .vl
 {
     border-left: 1px solid grey ;
     height: inherit;
 }
-
+ */

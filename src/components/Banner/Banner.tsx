@@ -7,40 +7,38 @@ const Banner = () => {
 
 
   return (
-    <>
-    <div className="banner flex mt-24 mx-auto relative ">
-    <div className="desc-banner w-full">
-      <div className="coffeo text-background text-8xl font-medium" >COFFEO.</div>
-      <div className="description-container">
-      <div className="description-titlee">An online coffee store</div>
-      <div className="description">
+    <div className="min-h-[750px] bg-slate-200 xl:mt-16">
+    <div className="xl:w-[1500px] xl:mx-auto xl:flex block  mt-10 xl:px-0 px-12 xl:pt-28 pt-12  overflow-hidden">
+    <div className="xl:w-[1440px]  xl:mx-auto h-fit  py-2 ">
+      <div className="coffeo text-background xl:text-8xl text-5xl font-medium" >COFFEO.</div>
+      <div className="xl:text-7xl text-4xl font-semibold xl:mt-2">An online coffee store</div>
+      <div className="xl:text-xl text-sm mt-6 font-medium">
           <div>Straight to your doorstep. We dont roast our coffee beans until we have your order.</div>
           <div>Every order is roasted and shipped the same day.</div>
       </div>
-      </div>
 
-    <div className=" mt-6">
+
+    <div className=" my-5">
     <ExploreBtn/>
     </div>
-      <div className="sales-description">
-        <div className="product">
-          <div className="title">Our Products</div>
-          <div className="status">+1000</div>
+      <div className="flex text-center mt-8">
+        <div className=" xl:text-2xl text-xl font-medium">
+          <p>Our Products</p>
+          <p>+1000</p>
         </div>
-    <div className="vl"></div>
-        <div className="total sales">
-        <div className="title">Total Sales</div>
-          <div className="status">+340K</div>
+    <div className=" border-l-[1px] border-black mx-6" ></div>
+        <div className=" xl:text-2xl text-xl font-medium">
+        <div>Total Sales</div>
+          <div >+340K</div>
         </div>
       </div>
-     
     </div>
-      <div className="img-container relative -rotate-[26deg] bottom-28 left-28">
+      <div className=" xl:block w-[1000px] relative -rotate-[26deg] bottom-[100px] right-[5%] ">
         <img className="coffee-img w-full h-full" src={coffeeImg} alt="" />
       </div>
 
   </div>
-  </>
+  </div>
   )
 };
 

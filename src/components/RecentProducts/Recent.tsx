@@ -8,8 +8,8 @@ import CoffeeAd from "../miscellaneous/CoffeeAd";
 
 const Recent = () => {
   return (
-    <div className="recent-products">
-      <div className="desctiption">
+    <div className="recent-products"> 
+      <div className="desctiption mt-8">
       <div className="text-4xl font-extrabold text-center pt-2">Explore the recent products</div>
         <div className="text-l font-normal text-center mt-3">Our delectable drink options, including classic espresso choices, house specialities, fruit smoothies and frozen treats.</div>
       </div>
