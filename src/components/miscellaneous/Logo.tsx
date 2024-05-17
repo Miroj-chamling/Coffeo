@@ -1,6 +1,6 @@
 const Logo = () => {
   return (
-        <div className=" font-bold xl:text-5xl text-3xl cursor-pointer font-logofont">Coffeo.</div>
+        <div className=" font-bold md:text-5xl text-3xl cursor-pointer font-logofont">Coffeo.</div>
   )
 }
 
