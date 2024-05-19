@@ -5,11 +5,11 @@ import Subscribe from "../miscellaneous/Subscribe"
 
 const Testimonials = () => {
   return (
-    <div className=" mt-44 ">
-        <div className=" flex items-start" >
-          <div className=" basis-2/5 w-full relative"> 
+    <div className=" mt-12 md:w-auto w-screen overflow-hidden">
+        <div className=" md:flex block items-start" >
+          <div className=" basis-2/5 relative "> 
             <img src={CoffeBeansImg} alt=""/>
-            <div className=" w-max h-20 backdrop-blur-sm  bg-white/70 absolute rounded-full right-2 top-80 flex p-2">
+            <div className=" min-w-fit h-20 backdrop-blur-sm  bg-white/70 absolute rounded-full right-2 top-80 flex p-2">
               <img src={testimoni} alt="" width={60} className=" rounded-full object-cover "/>
             <div className=" ml-3">
                 <div className="uname font-bold text-sm">Brooklyn Simons</div>
@@ -18,11 +18,11 @@ const Testimonials = () => {
             </div>
             </div>
           </div>
-            <div className=" flex flex-col ml-36 w-full pr-20 basis-3/5 ">  
-            <div className=" text-5xl text-orange-950 font-medium">We care about the quality of</div>
-            <div className=" text-5xl text-orange-950 font-medium">our <span className=" text-5xl text-orange-950 font-extrabold">products</span> </div>
+            <div className=" flex flex-col  w-full md:px-20 px-4 py-4 basis-3/5 ">  
+            <div className=" md:text-5xl text-2xl  text-orange-950 font-medium">We care about the quality of</div>
+            <div className=" md:text-5xl text-2xl text-orange-950 font-medium">our <span className=" md:text-5xl text-2xl text-orange-950 font-extrabold">products</span> </div>
 
-            <div className=" mt-6 text-xl text-orange-950">Drinking coffee is one of the most global things you can do each days here I can spend a long and comfortable time with this workspace tacilities. </div>
+            <div className=" mt-6 md:text-xl text-md text-orange-950">Drinking coffee is one of the most global things you can do each days here I can spend a long and comfortable time with this workspace tacilities. </div>
 
             <div className=" grid grid-rows-2 grid-cols-2 content-center mt-12 gap-x-20 gap-y-12">
                    <div className=" flex items-center justify-start cursor-pointer">
@@ -69,7 +69,7 @@ const Testimonials = () => {
                     </div> 
             </div>     
 
-            <div className=" mt-8"><ExploreBtn/></div>
+            <div className=" mt-12 md:block hidden "><ExploreBtn/></div>
 
             </div>
         </div>

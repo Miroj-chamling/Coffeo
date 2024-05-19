@@ -6,11 +6,10 @@ interface AccessoriesProps
 {
     imgSrc: string;
     productName: string;
-    previousPrice: string;
-    price: number;
+    previousPrice: number;
 }
 
-const Accessories:React.FC<AccessoriesProps> = ({imgSrc, productName, price, previousPrice} ) => {
+const Accessories:React.FC<AccessoriesProps> = ({imgSrc, productName, previousPrice} ) => {
     const [isFav, setIsFav] = useState(false);
 
     const handleFav = () =>
@@ -18,14 +17,13 @@ const Accessories:React.FC<AccessoriesProps> = ({imgSrc, productName, price, pre
         setIsFav(!isFav);
     }
   return (
-    <div className='coffee-container border rounded-3xl w-full h-96 flex flex-col items-center justify-between ml-5 relative hover:bg-red-300' >
-        <img src={imgSrc} alt="" width={220} className="coffee img absolute -top-10 bg-transparent" />
-        <div className='flex flex-col items-start description w-full pb-8 pl-4 pr-4 absolute bottom-0'>
-            <div className=" text-sm font-light">Product name</div>
-            <div className=" font-bold text-xl">{productName}</div>
+    <div className='flex flex-col items-center  border rounded-3xl min-w-[250px] md:min-h-fit min-h-fit  relative hover:bg-green-300 overflow-clip' >
+        <img src={imgSrc} alt="" className="md:min-h-[200px] min-h-[150px] bg-slate-200"  />
+        <div className='flex flex-col mt-4 items-center w-full pb-5 px-4'>
+            <div className=" font-bold md:text-xl text-sm">{productName}</div>
             <div className=" flex items-center gap-2">
             <div className=" text-xl line-through font-light">${previousPrice}</div>   
-            <div className=" text-3xl font-light mt-1 mb-1">${price}</div>
+            <div className=" text-2xl font-light mt-1 mb-1">${Math.ceil(previousPrice - previousPrice*(20/100)) }</div>
             </div>
             <div className='addCart flex justify-between w-full'>
                 <div className=" flex items-center text-background cursor-pointer">Add to cart &nbsp;<MoveRight size={18}/></div>

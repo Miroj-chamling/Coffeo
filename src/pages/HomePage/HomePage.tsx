@@ -6,7 +6,7 @@ import SpecialProducts from "../../components/SpecialProducts"
 import Testimonials from "../../components/Testimonials"
 const HomePage = () => {
   return (
-   <div >  
+   <div className=" overflow-hidden">  
       <Navbar/>
       <Banner/>
        <div className=" w-[1400px] my-0 mx-auto"> 
