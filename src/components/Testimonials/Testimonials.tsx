@@ -24,8 +24,8 @@ const Testimonials = () => {
 
             <div className=" mt-6 md:text-xl text-md text-orange-950">Drinking coffee is one of the most global things you can do each days here I can spend a long and comfortable time with this workspace tacilities. </div>
 
-            <div className=" grid grid-rows-2 grid-cols-2 content-center mt-12 gap-x-20 gap-y-12">
-                   <div className=" flex items-center justify-start cursor-pointer">
+            <div className=" md:grid block grid-rows-2 grid-cols-2 content-center mt-12 gap-x-20 gap-y-12">
+                   <div className=" flex items-center justify-start cursor-pointer ">
                      <div className=" rounded-full p-6 bg-primary">
                      <i className="fa fa-comments-o text-4xl" aria-hidden="true"></i>
                         </div>   
@@ -36,7 +36,7 @@ const Testimonials = () => {
                     </div> 
 
 
-                    <div className=" flex items-center justify-start cursor-pointer">
+                    <div className=" flex items-center justify-start cursor-pointer md:mt-0 mt-6">
                      <div className=" rounded-full p-6 bg-primary">
                      <i className="fa fa-cube text-4xl" aria-hidden="true"></i>
                         </div>   
@@ -47,7 +47,7 @@ const Testimonials = () => {
                     </div> 
 
 
-                    <div className=" flex items-center justify-start cursor-pointer">
+                    <div className=" flex items-center justify-start cursor-pointer md:mt-0 mt-6">
                      <div className=" rounded-full p-6 bg-primary">
                      <i className="fa fa-diamond text-4xl" aria-hidden="true"></i>
                         </div>   
@@ -58,7 +58,7 @@ const Testimonials = () => {
                     </div> 
 
 
-                    <div className=" flex items-center justify-start cursor-pointer" >
+                    <div className=" flex items-center justify-start cursor-pointer md:mt-0 mt-6" >
                      <div className=" rounded-full p-6 bg-primary ">
                      <i className="fa fa-leaf text-4xl" aria-hidden="true"></i>
                         </div>   
