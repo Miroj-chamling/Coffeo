@@ -5,15 +5,16 @@ import { Menu, X } from 'lucide-react';
 import { ShoppingCart, Search } from "lucide-react"
 import { useEffect, useState } from "react";
 import LoginBtn from "../miscellaneous/LoginBtn";
+import { useNavigate } from "react-router-dom";
 
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    // const navigate = useNavigate(); 
+    const navigate = useNavigate(); 
 
-    // const handleLogin =()=> {
-    //     navigate("/login");
-    // }
+    const handleLogin =()=> {
+        navigate("/login");
+    }
 
     const toggleMenu = () =>{
         setIsOpen(!isOpen);
@@ -37,7 +38,7 @@ const Navbar = () => {
                     <li><a href="#">About</a></li>
                     <li><a href="#">Special Offers</a></li>
                     <li><a href="#">Products</a></li>
-                    <div className=" md:hidden">  <LoginBtn/>  </div> 
+                    <div className=" md:hidden">  <LoginBtn handleLogin={handleLogin}/>  </div> 
                 </ul>
                 </div>
             <div className="hidden md:flex gap-8 items-center">
@@ -47,8 +48,8 @@ const Navbar = () => {
                 <div className="cart"> 
                 <ShoppingCart className=" cursor-pointer" height={20}/>
                 </div>
-                <LoginBtn />
-                {/* <div className="login-btn" onClick={handleClick}>Login</div> */}
+                <LoginBtn handleLogin={handleLogin}/>
+                {/* <div className="login-btn" onClick={handleLogin}>Login</div> */}
             </div>
             <div className="md:hidden flex">
                {isOpen? <X  onClick={toggleMenu} className=" text-6xl cursor-pointer"/>: <Menu onClick={toggleMenu} className=" text-6xl cursor-pointer"/>}
